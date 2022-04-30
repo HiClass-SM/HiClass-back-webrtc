@@ -6,7 +6,7 @@ const cors = require('cors')
 app.use(cors())
 //테스트용 http
 const http = require('http')
-
+const CLIENTPATH = "https://development--pedantic-einstein-75bdbe.netlify.app/"
 const fs = require('fs');
 // const options = {
 //     key: fs.readFileSync('./private.pem'),
@@ -15,8 +15,9 @@ const fs = require('fs');
 // const httpsServer = https.createServer(options,app)
 const httpServer = http.createServer(app)
 const io = require('socket.io')(httpServer,{
-  cors:{
-    origin:"*",
+  cors: {
+    origin: CLIENTPATH,
+    methods: ["GET", "POST"]
   }
 })
 app.set('view engine', 'ejs'); // 렌더링 엔진 모드를 ejs로 설정
