@@ -24,7 +24,7 @@ app.set('views',  __dirname + '/views');    // ejs이 있는 폴더를 지정
 
 let users = {}
 let socketToRoom = {}
-//방 입장인원 maximum 변수
+//방 입장인원 maximum 변
 const maximum = process.env.MAXIMUM ||8
 //방이 시험모드인지 study모드인지 통신을 통해 들어옴
 const rooomOption = ""
