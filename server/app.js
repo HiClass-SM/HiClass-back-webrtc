@@ -17,6 +17,7 @@ const httpServer = http.createServer(app)
 const io = require('socket.io')(httpServer,{
   cors:{
     origin:"*",
+    methods: ["GET", "POST"]
   }
 })
 app.set('view engine', 'ejs'); // 렌더링 엔진 모드를 ejs로 설정
