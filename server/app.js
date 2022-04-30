@@ -6,17 +6,17 @@ const cors = require('cors')
 app.use(cors())
 //테스트용 htt
 const http = require('http')
-
+const CLIENTPATH = "https://development--pedantic-einstein-75bdbe.netlify.app/"
 const fs = require('fs');
 // const options = {
 //     key: fs.readFileSync('./private.pem'),
 //     cert: fs.readFileSync('./public.pem')
 // }
-// const httpServer = https.createServer(options,app)
+// const httpsServer = https.createServer(options,app)
 const httpServer = http.createServer(app)
 const io = require('socket.io')(httpServer,{
-  cors:{
-    origin:"*",
+  cors: {
+    origin: CLIENTPATH,
     methods: ["GET", "POST"]
   }
 })
