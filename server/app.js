@@ -4,16 +4,16 @@ const app = require("express")();
 const https = require('https')
 const cors = require('cors')
 app.use(cors())
-//테스트용 htt
-const http = require('http')
+//테스트용 http
+// const http = require('http')
 
 const fs = require('fs');
-// const options = {
-//     key: fs.readFileSync('./private.pem'),
-//     cert: fs.readFileSync('./public.pem')
-// }
-// const httpsServer = https.createServer(options,app)
-const httpServer = http.createServer(app)
+const options = {
+    key: fs.readFileSync('./private.pem'),
+    cert: fs.readFileSync('./public.pem')
+}
+const httpServer = https.createServer(options,app)
+// const httpServer = http.createServer(app)
 const io = require('socket.io')(httpServer,{
   cors:{
     origin:"*",
