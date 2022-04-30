@@ -4,7 +4,7 @@ const app = require("express")();
 const https = require('https')
 const cors = require('cors')
 app.use(cors())
-//테스트용 http
+//테스트용 htt
 // const http = require('http')
 
 const fs = require('fs');
