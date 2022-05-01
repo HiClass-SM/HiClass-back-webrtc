@@ -16,7 +16,7 @@ const fs = require('fs');
 const httpServer = http.createServer(app)
 const io = require('socket.io')(httpServer,{
   cors: {
-    origin: CLIENTPATH,
+    origin: '*',
     methods: ["GET", "POST"]
   }
 })
