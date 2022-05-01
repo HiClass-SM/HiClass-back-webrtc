@@ -14,12 +14,7 @@ const fs = require('fs');
 // }
 // const httpsServer = https.createServer(options,app)
 const httpServer = http.createServer(app)
-const io = require('socket.io')(httpServer,{
-  cors: {
-    origin: '*',
-    methods: ["GET", "POST"]
-  }
-})
+const io = require('socket.io')(httpServer)
 app.set('view engine', 'ejs'); // 렌더링 엔진 모드를 ejs로 설정
 app.set('views',  __dirname + '/views');    // ejs이 있는 폴더를 지정
 
