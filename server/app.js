@@ -228,7 +228,7 @@ socket.on("translate_stt_message",data=> {
   
   
 })
-//------------------------------------gaze알람 관련----------------------
+//------------------------------------gaze알람 관련---------------------
 // socket.on("gazealert",(data)=> {
 //   const roomID = socketToRoom[socket.id];
 //   let room = users[roomID];
